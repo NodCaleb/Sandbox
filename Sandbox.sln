@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sandbox.SudokuSolver", "San
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sandbox.ProbabilityDistribution", "Sandbox.ProbabilityDistribution\Sandbox.ProbabilityDistribution.csproj", "{B8EF0EA7-6B91-42BC-B290-DFA6FC482090}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sandbox.Leetcode", "Sandbox.Leetcode\Sandbox.Leetcode.csproj", "{CCEBEC1C-CDD5-4F2C-AE1D-BAE0FD97B9E6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{B8EF0EA7-6B91-42BC-B290-DFA6FC482090}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B8EF0EA7-6B91-42BC-B290-DFA6FC482090}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B8EF0EA7-6B91-42BC-B290-DFA6FC482090}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CCEBEC1C-CDD5-4F2C-AE1D-BAE0FD97B9E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCEBEC1C-CDD5-4F2C-AE1D-BAE0FD97B9E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCEBEC1C-CDD5-4F2C-AE1D-BAE0FD97B9E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCEBEC1C-CDD5-4F2C-AE1D-BAE0FD97B9E6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
