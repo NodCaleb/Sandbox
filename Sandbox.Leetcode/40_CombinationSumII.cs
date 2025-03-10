@@ -1,16 +1,20 @@
-﻿namespace Sandbox.Leetcode;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-public class _39_CombinationSum
+namespace Sandbox.Leetcode;
+
+public class _40_CombinationSumII
 {
     [Theory]
-    [InlineData(new int[] { 2, 3, 6, 7 }, 7)]
-    [InlineData(new int[] { 2, 3, 5 }, 8)]
-    [InlineData(new int[] { 2 }, 1)]
-    public void CombinationSum(int[] candidates, int target)
+    [InlineData(new int[] { 10, 1, 2, 7, 6, 1, 5 }, 8)]
+    [InlineData(new int[] { 2, 5, 2, 1, 2 }, 5)]
+    public void CombinationSum2(int[] candidates, int target)
     {
         Console.WriteLine($"[{string.Join(", ", candidates)}] => {target}");
         Console.WriteLine($"---");
-
         foreach (var combination in GetCombinations(candidates, target))
         {
             Console.WriteLine($"[{string.Join(", ", combination)}]");
@@ -18,7 +22,8 @@ public class _39_CombinationSum
         }
     }
 
-    public IList<IList<int>> GetCombinations(int[] candidates, int target)
+
+    IList<IList<int>> GetCombinations(int[] candidates, int target)
     {
         var combinations = new Dictionary<int, IList<int>>();
 
@@ -30,10 +35,12 @@ public class _39_CombinationSum
         {
             var current = queue.Dequeue();
             var sum = 0;
+            
             for (int i = 0; i < current.Length; i++)
             {
                 sum += current[i] * candidates[i];
             }
+
             if (sum == target)
             {
                 var combination = new List<int>();
@@ -45,11 +52,13 @@ public class _39_CombinationSum
                     }
                 }
 
+                combination.Sort();
+
                 int key = Utils.ComputeHash(combination);
 
                 if (!combinations.ContainsKey(key))
                     combinations.Add(key, combination);
-                
+
             }
             else if (sum < target)
             {
@@ -57,8 +66,12 @@ public class _39_CombinationSum
                 {
                     var next = new int[current.Length];
                     Array.Copy(current, next, current.Length);
-                    next[i]++;
-                    queue.Enqueue(next);
+
+                    if (next[i] == 0)
+                    {
+                        next[i] = 1;
+                        queue.Enqueue(next);
+                    }                    
                 }
             }
         }
