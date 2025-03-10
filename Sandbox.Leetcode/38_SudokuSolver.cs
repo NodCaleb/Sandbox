@@ -1,39 +1,41 @@
-﻿using System.Reflection;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace Sandbox.SudokuSolver;
+namespace Sandbox.Leetcode;
 
-internal class Program
+public class _38_SudokuSolver
 {
-    static void Main(string[] args)
+    public static IEnumerable<object[]> GetTestData()
     {
-        char[][] board = [
-            ['5', '3', '.', '.', '7', '.', '.', '.', '.'],
-            ['6', '.', '.', '1', '9', '5', '.', '.', '.'],
-            ['.', '9', '8', '.', '.', '.', '.', '6', '.'],
-            ['8', '.', '.', '.', '6', '.', '.', '.', '3'],
-            ['4', '.', '.', '8', '.', '3', '.', '.', '1'],
-            ['7', '.', '.', '.', '2', '.', '.', '.', '6'],
-            ['.', '6', '.', '.', '.', '.', '2', '8', '.'],
-            ['.', '.', '.', '4', '1', '9', '.', '.', '5'],
-            ['.', '.', '.', '.', '8', '.', '.', '7', '9']
-            ];
-
-
-        SolveSudoku(board);
-
-        Console.WriteLine(string.Join(Environment.NewLine, board.Select(row => string.Join(' ', row))));
+        yield return new object[]
+        {
+            new char[][]
+            {
+                new char[] { '5', '3', '.', '.', '7', '.', '.', '.', '.' },
+                new char[] { '6', '.', '.', '1', '9', '5', '.', '.', '.' },
+                new char[] { '.', '9', '8', '.', '.', '.', '.', '6', '.' },
+                new char[] { '8', '.', '.', '.', '6', '.', '.', '.', '3' },
+                new char[] { '4', '.', '.', '8', '.', '3', '.', '.', '1' },
+                new char[] { '7', '.', '.', '.', '2', '.', '.', '.', '6' },
+                new char[] { '.', '6', '.', '.', '.', '.', '2', '8', '.' },
+                new char[] { '.', '.', '.', '4', '1', '9', '.', '.', '5' },
+                new char[] { '.', '.', '.', '.', '8', '.', '.', '7', '9' }
+            }
+        };
     }
 
-    public static void SolveSudoku(char[][] board)
+    [Theory]
+    [MemberData(nameof(GetTestData))]
+    public void SolveSudoku(char[][] board)
     {
         var bv = SolveBoard(board);
-        if (bv != null)
-        {
-            bv.FillSolution(board);
-        }
+        Assert.NotNull(bv);
     }
 
-    private static BoardVolatile SolveBoard(char[][] board)
+    BoardVolatile SolveBoard(char[][] board)
     {
         int solutionLength = 0;
         var queue = new Queue<List<char>>();
@@ -152,9 +154,9 @@ internal class Program
         var volatility = bv.GetVolatility();
 
         if (volatility == 0) return null;
-        
+
         if (volatility == 1) return bv;
-        
+
         //Solving by traversing options tree
         foreach (var o in bv.GetFirstOptions()) queue.Enqueue(new List<char> { o });
         solutionLength = 1;
@@ -194,7 +196,7 @@ internal class Program
     }
 }
 
-internal class BoardVolatile
+class BoardVolatile
 {
     List<char>[,] _options;
 
@@ -316,7 +318,7 @@ internal class BoardVolatile
             {
                 if (_options[i, j].Count != 1)
                 {
-                    CalculateCellOptions(i, j); 
+                    CalculateCellOptions(i, j);
                 }
             }
         }
@@ -373,7 +375,7 @@ internal class BoardVolatile
                             symbols.Add(_options[i * 3 + k, j * 3 + l][0]);
                         }
                     }
-                }                
+                }
             }
         }
 

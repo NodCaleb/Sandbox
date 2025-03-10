@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.13.35806.99
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sandbox.SudokuSolver", "Sandbox.SudokuSolver\Sandbox.SudokuSolver.csproj", "{D01C50D4-2851-4669-AD73-1398EB46DF43}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sandbox.ProbabilityDistribution", "Sandbox.ProbabilityDistribution\Sandbox.ProbabilityDistribution.csproj", "{B8EF0EA7-6B91-42BC-B290-DFA6FC482090}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sandbox.Leetcode", "Sandbox.Leetcode\Sandbox.Leetcode.csproj", "{CCEBEC1C-CDD5-4F2C-AE1D-BAE0FD97B9E6}"
@@ -15,10 +13,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{D01C50D4-2851-4669-AD73-1398EB46DF43}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D01C50D4-2851-4669-AD73-1398EB46DF43}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D01C50D4-2851-4669-AD73-1398EB46DF43}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D01C50D4-2851-4669-AD73-1398EB46DF43}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B8EF0EA7-6B91-42BC-B290-DFA6FC482090}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B8EF0EA7-6B91-42BC-B290-DFA6FC482090}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B8EF0EA7-6B91-42BC-B290-DFA6FC482090}.Release|Any CPU.ActiveCfg = Release|Any CPU
