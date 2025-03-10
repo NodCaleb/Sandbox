@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -168,7 +169,7 @@ public class _38_SudokuSolver
             if (solution.Count > solutionLength)
             {
                 solutionLength = solution.Count;
-                Console.WriteLine($"Solution length: {solutionLength}");
+                Debug.WriteLine($"Solution length: {solutionLength}");
             }
 
             var iBv = new BoardVolatile(board);
@@ -399,13 +400,13 @@ class BoardVolatile
                 else Console.Write('.');
                 Console.Write(' ');
             }
-            Console.WriteLine();
+            Debug.WriteLine("");
         }
         if (!ValidateBoard())
         {
-            Console.WriteLine("Board invalid!");
+            Debug.WriteLine("Board invalid!");
         }
-        Console.WriteLine();
+        Debug.WriteLine("");
     }
 
     public void CheckBoard()

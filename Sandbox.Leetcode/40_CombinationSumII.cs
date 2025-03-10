@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,11 +14,11 @@ public class _40_CombinationSumII
     [InlineData(new int[] { 2, 5, 2, 1, 2 }, 5)]
     public void CombinationSum2(int[] candidates, int target)
     {
-        Console.WriteLine($"[{string.Join(", ", candidates)}] => {target}");
-        Console.WriteLine($"---");
+        Debug.WriteLine($"[{string.Join(", ", candidates)}] => {target}");
+        Debug.WriteLine($"---");
         foreach (var combination in GetCombinations(candidates, target))
         {
-            Console.WriteLine($"[{string.Join(", ", combination)}]");
+            Debug.WriteLine($"[{string.Join(", ", combination)}]");
             Assert.True(combination.Sum() == target);
         }
     }

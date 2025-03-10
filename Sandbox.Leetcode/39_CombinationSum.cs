@@ -1,4 +1,6 @@
-﻿namespace Sandbox.Leetcode;
+﻿using System.Diagnostics;
+
+namespace Sandbox.Leetcode;
 
 public class _39_CombinationSum
 {
@@ -8,12 +10,12 @@ public class _39_CombinationSum
     [InlineData(new int[] { 2 }, 1)]
     public void CombinationSum(int[] candidates, int target)
     {
-        Console.WriteLine($"[{string.Join(", ", candidates)}] => {target}");
-        Console.WriteLine($"---");
+        Debug.WriteLine($"[{string.Join(", ", candidates)}] => {target}");
+        Debug.WriteLine($"---");
 
         foreach (var combination in GetCombinations(candidates, target))
         {
-            Console.WriteLine($"[{string.Join(", ", combination)}]");
+            Debug.WriteLine($"[{string.Join(", ", combination)}]");
             Assert.True(combination.Sum() == target);
         }
     }
