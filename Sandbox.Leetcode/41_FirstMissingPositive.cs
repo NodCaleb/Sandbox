@@ -16,22 +16,43 @@ public class _41_FirstMissingPositive
 
     int GetFirstMissingPositive(int[] nums)
     {
-        int expected = 1;
+        int maxValue = nums.Length;
+        bool onePresent = false;
 
-        Array.Sort(nums);
-
+        //Clean up the array
         for (int i = 0; i < nums.Length; i++)
         {
-            if (nums[i] == expected)
+            if (nums[i] == 1)
             {
-                expected++;
+                onePresent = true;
             }
-            if (nums[i] > expected)
+
+            if (nums[i] > maxValue || nums[i] <= 0)
             {
-                return expected;
+                nums[i] = 1;
             }
         }
 
-        return expected;
+        if (!onePresent)
+        {
+            return 1;
+        }
+
+        //Mark the numbers
+        for (int i = 0; i < nums.Length; i++)
+        {
+            nums[Math.Abs(nums[i]) - 1] = -Math.Abs(nums[Math.Abs(nums[i]) - 1]);
+        }
+
+        //Find the first missing positive
+        for (int i = 0; i < nums.Length; i++)
+        {
+            if (nums[i] > 0)
+            {
+                return i + 1;
+            }
+        }
+
+        return maxValue;
     }
 }
