@@ -8,7 +8,7 @@ using OpenAI.Chat;
 using System.ClientModel;
 using System.Reflection;
 
-Console.WriteLine("AI Agent Workflow demo");
+Console.WriteLine("AI Agent translator demo");
 
 var config = new ConfigurationBuilder()
     .AddUserSecrets(Assembly.GetEntryAssembly()!)
@@ -17,7 +17,7 @@ var config = new ConfigurationBuilder()
 var apiKey = config["GitHub:ApiKey"];
 if (string.IsNullOrWhiteSpace(apiKey))
 {
-    throw new InvalidOperationException("User secret 'GitHub:ApiKey' not found. Add it with 'dotnet user-secrets set \"GitHub:ApiKey\" \"<your-key>\"'.");
+    throw new InvalidOperationException("GitHub ApiKey not found.");
 }
 
 IChatClient chatClient =
