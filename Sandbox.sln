@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sandbox.MultiLanguageTransl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sandbox.AgentWorkflow", "Sandbox.AgentWorkflow\Sandbox.AgentWorkflow.csproj", "{719D92CC-2582-4711-9A93-251F40CF8FDC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sandbox.SpectreConsoleDemo", "Sandbox.SpectreConsoleDemo\Sandbox.SpectreConsoleDemo.csproj", "{0A2D95EC-695C-41EE-AC0D-246FD7F3379B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -83,6 +85,18 @@ Global
 		{719D92CC-2582-4711-9A93-251F40CF8FDC}.Release|x64.Build.0 = Release|Any CPU
 		{719D92CC-2582-4711-9A93-251F40CF8FDC}.Release|x86.ActiveCfg = Release|Any CPU
 		{719D92CC-2582-4711-9A93-251F40CF8FDC}.Release|x86.Build.0 = Release|Any CPU
+		{0A2D95EC-695C-41EE-AC0D-246FD7F3379B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A2D95EC-695C-41EE-AC0D-246FD7F3379B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A2D95EC-695C-41EE-AC0D-246FD7F3379B}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{0A2D95EC-695C-41EE-AC0D-246FD7F3379B}.Debug|x64.Build.0 = Debug|Any CPU
+		{0A2D95EC-695C-41EE-AC0D-246FD7F3379B}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{0A2D95EC-695C-41EE-AC0D-246FD7F3379B}.Debug|x86.Build.0 = Debug|Any CPU
+		{0A2D95EC-695C-41EE-AC0D-246FD7F3379B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A2D95EC-695C-41EE-AC0D-246FD7F3379B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A2D95EC-695C-41EE-AC0D-246FD7F3379B}.Release|x64.ActiveCfg = Release|Any CPU
+		{0A2D95EC-695C-41EE-AC0D-246FD7F3379B}.Release|x64.Build.0 = Release|Any CPU
+		{0A2D95EC-695C-41EE-AC0D-246FD7F3379B}.Release|x86.ActiveCfg = Release|Any CPU
+		{0A2D95EC-695C-41EE-AC0D-246FD7F3379B}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
