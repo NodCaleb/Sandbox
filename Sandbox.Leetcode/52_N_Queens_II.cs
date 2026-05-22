@@ -1,32 +1,34 @@
-﻿using Microsoft.VisualStudio.TestPlatform.Utilities;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Sandbox.Leetcode;
 
-public class _51_N_Queens
+public class _52_N_Queens_II
 {
-
     [Theory]
     [InlineData(4, 2)]
     [InlineData(1, 1)]
     public void Test(int n, int expected)
     {
-        var actual = SolveNQueens(n);
-        Assert.Equal(expected, actual.Count);
+        var actual = TotalNQueens(n);
+        Assert.Equal(expected, actual);
     }
 
-    private IList<IList<string>> SolveNQueens(int n)
+    private int TotalNQueens(int n)
     {
         var boards = new HashSet<QueenBoard>();
 
-        for (int  i = 0; i < n*n; i++)
+        for (int i = 0; i < n * n; i++)
         {
             var board = QueenBoard.ConstructBoard(n, i);
 
             if (board.CalculateQueens() == n && !boards.Contains(board)) boards.Add(board);
         }
 
-        return boards.Select(b => b.PrintBoard()).ToList();
+        return boards.Count();
     }
 
     class QueenBoard
@@ -108,7 +110,7 @@ public class _51_N_Queens
                             i == x ||
                             j == y ||
                             Math.Abs(i - x) == Math.Abs(j - y)
-                        )                        
+                        )
                     )
                     {
                         _cells[i, j] = Cell.Attacked;
